@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product
+          uri: lb://product-service
+          predicates:
+            - Path=/products/**
